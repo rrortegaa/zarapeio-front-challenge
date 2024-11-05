@@ -1,0 +1,31 @@
+<article class="card cell">
+  <div class="card-image">
+    <img
+      class="image is-5by4"
+      src="https://cdn2.thecatapi.com/images/{{
+        catology.reference_image_id
+      }}.jpg"
+      alt="Photo of {{ catology.name }}"
+    />
+  </div>
+  <div
+    class="card-content is-flex is-flex-direction-column is-justify-content-space-between"
+  >
+    <h3 class="title is-size-4 has-text-weight-semibold pb-3">
+      {{ catology.name }}
+    </h3>
+    <p class="is-size-6 pb-2">{{ catology.description }}</p>
+    <p class="is-size-6 has-text-weight-semibold">Temperament:</p>
+
+    <p class="is-size-6 pb-2">{{ catology.temperament }}</p>
+    <p class="is-size-6 has-text-weight-semibold">Origin:</p>
+
+    <p class="is-size-6 pb-2">{{ catology.origin }}</p>
+    <a
+      class="is-size-6 has-text-weight-semibold"
+      [href]="catology.wikipedia_url"
+      target="_blank"
+      >Learn more</a
+    >
+  </div>
+</article>
