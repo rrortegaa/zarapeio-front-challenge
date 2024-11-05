@@ -1,6 +1,38 @@
-<div class="has-border-link-dark">
-  <h1 class="title is-1 is-spaced has-text-link has-text-weight-bold has-text-centered has-text-left-desktop">
-    CataLog
-  </h1>
-  <h1 class="subtitle is-4 has-text-centered has-text-left-desktop">Your daily dose of cattitude.</h1>
-</div>
+<app-navbar></app-navbar>
+<section class="hero is-medium has-background-link">
+  <div
+    class="hero-body level is-flex is-justify-content-center is-max-widescreen"
+  >
+    <div class="has-text-centered">
+      <h1
+        class="title is-size-2 has-text-weight-light has-text-centered has-text-left-desktop pb-5"
+      >
+        Welcome to <br />
+        <span class="title is-size-1 has-text-white has-text-weight-bold"
+          >Cat-a-Log</span
+        >
+      </h1>
+      <h3
+        class="subtitle is-size-3 has-text-light has-text-weight-medium has-text-centered has-text-left-desktop"
+      >
+        Your daily dose of cattitude.
+      </h3>
+    </div>
+    <figure class="is-flex is-justify-content-center">
+      <img
+        class="image is-4by5"
+        width="300px"
+        src="/heroes.png"
+        alt="catalog cat"
+      />
+    </figure>
+  </div>
+</section>
+<section class="section">
+  <div class="container grid is-gap-2 is-col-min-12">
+    <app-catology
+      *ngFor="let catology of catologyList"
+      [catology]="catology"
+    ></app-catology>
+  </div>
+</section>
