@@ -28,19 +28,22 @@
 </section>
 <section class="section">
   <div class="container">
-    <h1 class="title pb-6">Catology List</h1>
-    <div *ngIf="loading">Loading...</div>
+    <h2 class="title is-size-2 pb-4">Meowpedia</h2>
+    <h3 class="subtitle is-size-4 pb-6">
+      Get to know the different breeds of your furry friends!
+    </h3>
+    <div *ngIf="loading" class="is-size-2 is-text-warning">Loading...</div>
     <div
-      *ngIf="!loading && catologyList.length > 0; else noCats"
+      *ngIf="!loading && meowpedia.length > 0; else noMeows"
       class="container grid is-gap-2 is-col-min-11"
     >
-      <div *ngFor="let cat of catologyList">
-        <app-catology [catology]="cat"></app-catology>
+      <div *ngFor="let meow of meowpedia">
+        <app-meow [meow]="meow"></app-meow>
       </div>
     </div>
-    <ng-template #noCats>
+    <ng-template #noMeows>
       <div class="is-flex is-justify-content-center">
-        <h2 class="subtitle">No cats available.</h2>
+        <h2 class="subtitle">No meows available.</h2>
       </div>
     </ng-template>
   </div>

@@ -2,35 +2,35 @@ import { Component, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { CatologyComponent } from '../catology/catology.component';
-import { PurrfectService } from '../purrfect.service';
-import { Catology } from '../catology';
+import { MeowComponent } from '../meow/meow.component';
+import { PurrfectService } from '../services/purrfect.service';
+import { Meow } from '../meow';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, CatologyComponent, NavbarComponent],
+  imports: [CommonModule, HttpClientModule, NavbarComponent, MeowComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   purrfectService: PurrfectService = inject(PurrfectService);
-  catologyList: Catology[] = [];
+  meowpedia: Meow[] = [];
   loading: boolean = true;
   #subscriptions: Subscription = new Subscription();
 
   constructor() {}
 
   ngOnInit(): void {
-    const catsSubscription = this.purrfectService
+    const meowsSubscription = this.purrfectService
       .getAllCats()
-      .subscribe((catologyList: Catology[]) => {
-        this.catologyList = catologyList;
+      .subscribe((meowpedia: Meow[]) => {
+        this.meowpedia = meowpedia;
         this.loading = false;
       });
 
-    this.#subscriptions.add(catsSubscription);
+    this.#subscriptions.add(meowsSubscription);
   }
 
   ngOnDestroy(): void {
