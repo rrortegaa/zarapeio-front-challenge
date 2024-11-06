@@ -1,4 +1,4 @@
-<article class="card cell">
+<article class="card cell has-background-link-light">
   <div class="card-image">
     <img
       class="image is-5by4"
@@ -9,23 +9,24 @@
     />
   </div>
   <div
-    class="card-content is-flex is-flex-direction-column is-justify-content-space-between"
+    class="card-content is-flex is-flex-direction-column is-align-content-space-between"
   >
-    <h3 class="title is-size-4 has-text-weight-semibold pb-3">
+    <h3 class="title is-size-4 has-text-link-65 has-text-weight-semibold pb-3">
       {{ catology.name }}
     </h3>
-    <p class="is-size-6 pb-2">{{ catology.description }}</p>
-    <p class="is-size-6 has-text-weight-semibold">Temperament:</p>
-
-    <p class="is-size-6 pb-2">{{ catology.temperament }}</p>
-    <p class="is-size-6 has-text-weight-semibold">Origin:</p>
-
-    <p class="is-size-6 pb-2">{{ catology.origin }}</p>
+    <p class="is-size-6 has-text-text-40 pb-2">{{ catology.description }}</p>
+    <p class="is-size-6 has-text-text-40 has-text-weight-semibold">
+      Temperament:
+    </p>
+    <p class="is-size-6 has-text-text-40 pb-2">{{ catology.temperament }}</p>
+    <p class="is-size-6 has-text-text-40 has-text-weight-semibold">Origin:</p>
+    <p class="is-size-6 has-text-text-40 pb-2">{{ catology.origin }}</p>
     <a
-      class="is-size-6 has-text-weight-semibold"
+      class="link-color is-size-6 has-text-weight-semibold"
       [href]="catology.wikipedia_url"
       target="_blank"
-      >Learn more</a
     >
+      Learn more
+    </a>
   </div>
 </article>

@@ -1,8 +1,12 @@
 .card {
-  height: 776px;
-
+  height: 790px;
+  // max-height: max-content;
   .image {
     object-fit: cover;
+  }
+
+  .link-color {
+    color: blueviolet;
   }
 }
 

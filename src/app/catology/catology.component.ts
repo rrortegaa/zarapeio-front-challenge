@@ -10,6 +10,4 @@ import { Catology } from '../catology';
 })
 export class CatologyComponent {
   @Input() catology!: Catology;
-
-  // baseUrl = 'https://cdn2.thecatapi.com/images/';
 }
