@@ -1,0 +1,30 @@
+<header class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <nav class="container is-flex is-justify-content-space-between">
+    <a href="/">
+      <!-- <a [routerLink]="['/']"> -->
+      <img
+        class="image is-96x96"
+        src="/logo.png"
+        alt="logo"
+        aria-hidden="true"
+      />
+    </a>
+    <div class="nav-end is-flex is-justify-content-space-around">
+      <a href="/profile" class="level is-align-self-center pr-2">
+        <!-- <a [routerLink]="['/profile']"> -->
+        <img
+          class="image is-48x48"
+          src="https://avatar.iran.liara.run/public"
+          alt="perfil de usuario"
+        />
+      </a>
+      <button
+        type="button"
+        (click)="onClick()"
+        class="button is-align-self-center is-link is-normal is-rounded is-hovered mr-4"
+      >
+        Logout
+      </button>
+    </div>
+  </nav>
+</header>
