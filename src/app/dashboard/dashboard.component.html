@@ -1,38 +1,47 @@
-<app-navbar></app-navbar>
-<section class="hero is-medium has-background-link">
-  <div
-    class="hero-body level is-flex is-justify-content-center is-max-widescreen"
-  >
-    <div class="has-text-centered">
-      <h1
-        class="title is-size-2 has-text-weight-light has-text-centered has-text-left-desktop pb-5"
-      >
-        Welcome to <br />
-        <span class="title is-size-1 has-text-white has-text-weight-bold"
-          >Cat-a-Log</span
-        >
-      </h1>
-      <h3
-        class="subtitle is-size-3 has-text-light has-text-weight-medium has-text-centered has-text-left-desktop"
-      >
-        Your daily dose of cattitude.
-      </h3>
+<app-navbar />
+<section class="hero is-medium has-background-link-light">
+  <div class="hero-body">
+    <div
+      class="container is-flex is-justify-content-space-around is-flex-wrap-wrap is-max-fullhd"
+    >
+      <div class="is-align-content-center">
+        <h1 class="title is-size-2 has-text-text-40 has-text-weight-light pb-5">
+          Welcome to <br />
+          <span class="title is-size-1 has-text-link-65 has-text-weight-bold"
+            >Cat-a-Log</span
+          >
+        </h1>
+        <h3 class="subtitle is-size-3 has-text-text-45 has-text-light pb-5">
+          Your daily dose of cattitude.
+        </h3>
+      </div>
+      <figure class="is-flex is-justify-content-center">
+        <img
+          class="image is-4by5"
+          width="310px"
+          src="/heroes.png"
+          alt="catalog cat"
+        />
+      </figure>
     </div>
-    <figure class="is-flex is-justify-content-center">
-      <img
-        class="image is-4by5"
-        width="300px"
-        src="/heroes.png"
-        alt="catalog cat"
-      />
-    </figure>
   </div>
 </section>
 <section class="section">
-  <div class="container grid is-gap-2 is-col-min-12">
-    <app-catology
-      *ngFor="let catology of catologyList"
-      [catology]="catology"
-    ></app-catology>
+  <div class="container">
+    <h1 class="title pb-6">Catology List</h1>
+    <div *ngIf="loading">Loading...</div>
+    <div
+      *ngIf="!loading && catologyList.length > 0; else noCats"
+      class="container grid is-gap-2 is-col-min-11"
+    >
+      <div *ngFor="let cat of catologyList">
+        <app-catology [catology]="cat"></app-catology>
+      </div>
+    </div>
+    <ng-template #noCats>
+      <div class="is-flex is-justify-content-center">
+        <h2 class="subtitle">No cats available.</h2>
+      </div>
+    </ng-template>
   </div>
 </section>
