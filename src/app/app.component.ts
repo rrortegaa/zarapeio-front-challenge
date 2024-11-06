@@ -8,7 +8,7 @@ import { LoginComponent } from './login/login.component';
   standalone: true,
   imports: [RouterModule, LoginComponent, DashboardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'zarapeio-front-challenge';
