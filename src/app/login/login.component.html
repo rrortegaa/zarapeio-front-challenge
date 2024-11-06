@@ -1,21 +1,29 @@
 <section class="section">
   <div
-    class="container has-background-link-light is-max-tablet is-flex is-justify-content-center p-6"
+    class="container has-background-link-light is-max-tablet is-flex is-flex-direction-column is-justify-content-center is-align-items-center p-6"
   >
+    <h1
+      class="title is-size-1 has-text-link has-text-weight-bold has-text-centered pb-5"
+    >
+      Login
+    </h1>
     <form [formGroup]="loginForm" (submit)="submit()">
-      <header class="has-text-centered pb-6">
-        <h1 class="title is-size-1 has-text-link has-text-weight-bold">
-          Login
-        </h1>
-      </header>
       <div class="is-flex is-flex-direction-column">
         <label for="email" class="has-text-text-40">Email</label>
         <input
+          class="input-border"
           id="email"
           type="email"
           formControlName="email"
-          class="input-border"
         />
+        <p
+          class="help is-danger is-size-6"
+          *ngIf="
+            loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+          "
+        >
+          Please enter a valid email
+        </p>
       </div>
       <div class="is-flex is-flex-direction-column">
         <label for="password" class="has-text-text-40">Password</label>
@@ -25,6 +33,15 @@
           pattern=".{8,}"
           formControlName="password"
         />
+        <p
+          class="help is-danger is-size-6"
+          *ngIf="
+            loginForm.get('password')?.invalid &&
+            loginForm.get('password')?.touched
+          "
+        >
+          Password must be at least 6 characters long
+        </p>
       </div>
       <div class="container pt-5">
         <button type="submit" class="button is-link is-rounded">Log In</button>
