@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,11 +12,11 @@ import { AuthService } from '../auth.service';
 export class ProfileComponent implements OnInit {
   email: string = '';
 
-  constructor() {
-    this.email = localStorage.getItem('email') ?? 'not found';
-  }
+  #authService: AuthService = inject(AuthService);
+
+  constructor() {}
 
   ngOnInit(): void {
-    console.log('Email: ', this.email);
+    this.email = this.#authService.getUserEmail();
   }
 }

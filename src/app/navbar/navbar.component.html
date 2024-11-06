@@ -1,7 +1,6 @@
 <header class="navbar is-dark" role="navigation" aria-label="main navigation">
   <nav class="container is-flex is-justify-content-space-between">
     <a href="/">
-      <!-- <a [routerLink]="['/']"> -->
       <img
         class="image is-96x96"
         src="/logo.png"
@@ -11,10 +10,9 @@
     </a>
     <div class="nav-end is-flex is-justify-content-space-around">
       <a href="/profile" class="level is-align-self-center pr-2">
-        <!-- <a [routerLink]="['/profile']"> -->
         <img
-          class="image is-48x48"
-          src="https://avatar.iran.liara.run/public"
+          class="image is-48x48 rounded"
+          src="https://api.dicebear.com/9.x/fun-emoji/svg?seed={{ email }}"
           alt="perfil de usuario"
         />
       </a>

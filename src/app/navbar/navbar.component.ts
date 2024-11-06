@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +9,17 @@ import { AuthService } from '../auth.service';
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss',
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   authService: AuthService = inject(AuthService);
+  email: string = '';
 
-  constructor(authService: AuthService) {}
+  constructor() {}
 
   onClick() {
-    // console.log('is logout?', this.authService.logout);
     this.authService.logout();
+  }
+
+  ngOnInit(): void {
+    this.email = this.authService.getUserEmail();
   }
 }
