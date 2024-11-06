@@ -1,0 +1,16 @@
+.card {
+  height: 690px;
+  .image {
+    object-fit: cover;
+  }
+  .ellipsis {
+    max-height: 120px;
+    text-overflow: clip;
+    overflow: hidden;
+  }
+
+  .link-color {
+    color: blueviolet;
+  }
+}
+
