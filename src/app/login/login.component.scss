@@ -1,0 +1,25 @@
+.container {
+  border-radius: 30px;
+}
+
+label {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 12pt;
+}
+
+input {
+  font-size: 14pt;
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 260px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: solid .3px;
+  background-color: transparent;
+}
+
+button {
+  width: 100%;
+}
